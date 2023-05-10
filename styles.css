@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 8rem;
+    margin: 0;
+}
+
+p {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.icon {
+    position: absolute;
+    bottom: calc(50% - 20px);
+    transform: translateX(-50%);
+    animation: move-up 2s ease-in-out, wiggle 3s ease-in-out infinite;
+}
+
+/*animation: move-up 2s ease-in-out forwards, wiggle 3s infinite;*/
+
+@keyframes move-up {
+    0% {
+        bottom: -100px;
+    }
+    100% {
+        bottom: calc(50% - 20px); /* Middle of the screen */
+    }
+}
+
+@keyframes wiggle {
+    0% {
+        transform: translate(-50%, 0) rotateZ(0deg);
+    }
+    50% {
+        transform: translate(-50%, -20px) rotateZ(-10deg);
+    }
+    100% {
+        transform: translate(-50%, 0) rotateZ(0deg);
+    }
+}
+
+@keyframes go-up {
+    0% {
+        calc(50% - 20px); /* Middle of the screen */
+    }
+    100% {
+        bottom: 110%; /* Disappear at the top of the screen */
+    }
+}
